@@ -5,6 +5,10 @@ The significance of POS tagging lies in its ability to enhance the understanding
 
 POS tagging is employeed frequently in tasks such as sentiment analysis, syntax analysis, speech recognition, and grammar and style checking.
 """
+import nltk
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+
 from nltk.tag import pos_tag
 from nltk.tokenize import word_tokenize
 
@@ -22,6 +26,10 @@ def samplePOSTagging():
 #   3. And return the resulting list 
 # The test will verify that the NN, JJ, and VB tag exists somewhere in the returned list of pos tagged word tokens
 def posTaggingExercise():
-    text = "your_ingenuous_sentence_here"
+    text = "I will take his big apple."
+    tokens = word_tokenize(text)
+    print(pos_tag(tokens))
+    return pos_tag(tokens)
 
-    return text
+if __name__ == '__main__':
+    posTaggingExercise()
